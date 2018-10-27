@@ -10,7 +10,7 @@ module.exports = (app) => {
     );
 
     // 2nd route handler sends back to our page
-    app.get('/auth/google/callback', passport.authenticate('google'),
+    app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/' }),
         (req, res) => {
             res.redirect('/surveys')
         }
